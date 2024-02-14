@@ -1,0 +1,97 @@
+:root {
+    --is-red: #d73953;
+    --btn-transition: 0.1s ease-out;
+    --circle-size: 3rem; /* Increased circle size */
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .menu-open {
+    display: none;
+  }
+  
+  .menu-open-button {
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+    background-color: var(--is-red);
+    height: var(--circle-size);
+    width: var(--circle-size);
+    margin-bottom: 5px;
+  }
+  
+  .menu-line {
+    margin: 1px auto;
+    width: 10px;
+    height: 1px;
+    background: white;
+  }
+  
+  .menu-item {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+    border-radius: 50%;
+    background-color: var(--is-red);
+    height: var(--circle-size);
+    width: var(--circle-size);
+    margin-bottom: 5px;
+  }
+  
+  .menu-open-button:hover {
+    height: 4.2rem; /* Adjusted size */
+    width: 4.2rem; /* Adjusted size */
+    transition: 0.1s ease-out;
+  }
+  
+  .menu-open-button:hover .menu-line-1 {
+    margin-top: 19px; /* Adjusted margin */
+    transition: var(--btn-transition);
+  }
+  
+  .menu-open-button:hover .menu-line {
+    margin-top: 9px auto; /* Adjusted margin */
+  }
+  
+  .menu-line-1 {
+    margin-top: 18px; /* Adjusted margin */
+  }
+  
+  .menu-open:checked ~ .menu-open-button,
+  .menu-open:checked ~ .menu-item {
+    height: 2.5rem; /* Adjusted size */
+    width: 2.5rem; /* Adjusted size */
+    font-size: 10px; /* Adjusted font size */
+  }
+  
+  .menu-open:checked ~ .menu-open-button > .menu-line-3 {
+    display: none;
+  }
+  
+  .menu-open:checked ~ .menu-open-button > .menu-line-1 {
+    transform: rotate(45deg);
+    margin-top: 17.5px; /* Adjusted margin */
+    transition: var(--btn-transition);
+  }
+  
+  .menu-open:checked ~ .menu-open-button > .menu-line-2 {
+    transform: rotate(-45deg);
+    margin-top: -2.5px; /* Adjusted margin */
+    transition: var(--btn-transition);
+  }
+  
+  .menu-open:checked ~ .menu-item {
+    display: flex;
+  }
+  
+  .menu-open:checked ~ .menu-item:hover {
+    background-color: white;
+    color: var(--is-red);
+    border: 0.5px solid var(--is-red);
+  }
+  
